@@ -1,0 +1,10 @@
+---
+devops_packages:
+  - git
+  - curl
+  - htop
+  - tree
+  - wget
+  - jq
+  - vim
+  - nginx

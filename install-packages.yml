@@ -1,0 +1,22 @@
+
+---
+- name: Configure DevOps managed servers
+  hosts: devops
+  become: true
+
+
+  tasks:
+    - name: Ensure essential packages are installed
+      ansible.builtin.apt:
+        name: "{{ devops_packages }}"
+        state: present
+        update_cache: true
+
+
+    - name: Generate server information file
+      ansible.builtin.template:
+        src: templates/server-info.j2
+        dest: /etc/server-info.txt
+        owner: root
+        group: root
+        mode: '0644'

@@ -1,0 +1,5 @@
+---
+webserver_packages:
+  - nginx
+  - curl
+  - htop
